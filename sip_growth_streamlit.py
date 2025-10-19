@@ -102,8 +102,8 @@ def main():
 	
 	st.sidebar.markdown("---")
     st.sidebar.subheader("Investment Increases 📈")
-    increases = []
-    num_increases = st.sidebar.number_input("Number of Increases", 0, 10, 0)
+	increases = []
+	num_increases = st.sidebar.number_input("Number of Increases", 0, 10, 0)
 
     for i in range(num_increases):
         after_years = st.sidebar.number_input(f"Increase {i+1}: After how many years?", 0, end_age - current_age - 1, 5, key=f"iy_{i}")
@@ -177,6 +177,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
