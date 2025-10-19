@@ -71,7 +71,7 @@ def build_yearly_df(total_years, results, increases, monthly_investment, rates, 
 def main():
 	st.image("RFin logo.png", width=150) 
 	# adjust width as needed
-    st.set_page_config(page_title="💷 Compound Interst Growth Simulator", layout="wide")
+    st.set_page_config(page_title="💷 Compound Interst Growth Simulator", layout="wide");
 
     # Add colorful CSS
     st.markdown("""
@@ -174,4 +174,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
