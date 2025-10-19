@@ -101,7 +101,7 @@ def main():
 	compounding_end_age = st.sidebar.number_input("Compound Until Age (optional)", min_value=current_age + 1, max_value=120, value=end_age)
 	
 	st.sidebar.markdown("---")
-    st.sidebar.subheader("Investment Increases 📈")
+	st.sidebar.subheader("Investment Increases 📈")
 	increases = []
 	num_increases = st.sidebar.number_input("Number of Increases", 0, 10, 0)
 
@@ -177,6 +177,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
