@@ -82,7 +82,7 @@ def main():
 # Add the quote
 	st.markdown(
     """
-    <div style='text-align:center; font-size:20px; color:#0d47a1; font-style:italic; margin-bottom:20px;'>
+    <div style='text-align:center; font-size:25px; color:#0d47a1; font-style:italic; margin-bottom:20px;'>
     "Compound interest is the eighth wonder of the world. He who understands it, earns it; he who doesn't, pays it."
     </div>
     """,
@@ -169,6 +169,7 @@ def main():
 
 if __name__ == "__main__":
 	main()
+
 
 
 
