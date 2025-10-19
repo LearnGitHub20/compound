@@ -93,9 +93,8 @@ def main():
 	st.title("💷 Investment Growth Simulator")
 	st.set_page_config(page_title="💷 Investment Growth Simulator", layout="wide")
 	st.title("💷 Investment Growth Simulator")
-
-    # Sidebar inputs
-    st.sidebar.header("Enter Your Investment Details 🎯")
+	# Sidebar inputs
+	st.sidebar.header("Enter Your Investment Details 🎯")
     current_age = st.sidebar.number_input("Current Age", min_value=1, max_value=120, value=25)
     monthly_investment = st.sidebar.number_input("Initial Monthly Investment", min_value=0.0, value=500.0, step=50.0)
     end_age = st.sidebar.number_input("Invest Until Age", min_value=current_age + 1, max_value=120, value=60)
@@ -178,4 +177,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
