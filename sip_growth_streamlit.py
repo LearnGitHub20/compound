@@ -112,13 +112,13 @@ def main():
 	# ----------------------------
     # Calculate button
     # ----------------------------
-    calculate = st.sidebar.button("💡 Calculate Growth")
+	calculate = st.sidebar.button("💡 Calculate Growth")
+	
+	# Currency selector
+	currency = st.sidebar.selectbox("Select Currency", ["GBP", "INR", "USD"], index=0)
+	symbol = CURRENCY_SYMBOL[currency]
 
-    # Currency selector
-    currency = st.sidebar.selectbox("Select Currency", ["GBP", "INR", "USD"], index=0)
-    symbol = CURRENCY_SYMBOL[currency]
-
-    if calculate:
+	if calculate:
         rates = [8, 10, 12, 15]
         results, total_years = simulate_investment(
             current_age, monthly_investment, end_age, increases, rates, compounding_end_age
@@ -176,6 +176,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
