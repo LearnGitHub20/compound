@@ -119,24 +119,21 @@ def main():
 	symbol = CURRENCY_SYMBOL[currency]
 
 	if calculate:
-        rates = [8, 10, 12, 15]
-        results, total_years = simulate_investment(
-            current_age, monthly_investment, end_age, increases, rates, compounding_end_age
-        )
-
-        df = build_yearly_df(total_years, results, increases, monthly_investment, rates, current_age)
-
-        # Apply currency symbol only
-        for r in rates:
-            df[f"{r}% Return"] = df[f"{r}% Return"].apply(lambda x: f"{symbol}{x:,}")
-        df["Total Invested"] = df["Total Invested"].apply(lambda x: f"{symbol}{x:,}")
-
-        st.subheader("📊 Year-by-Year Breakdown with Age")
-        st.dataframe(df, use_container_width=True)
-
-        st.subheader("💰 Summary Table")
-        summary_rows = []
-        for r in rates:
+		rates = [8, 10, 12, 15]
+		results, total_years = simulate_investment(
+			current_age, monthly_investment, end_age, increases, rates, compounding_end_age
+		)
+		
+		df = build_yearly_df(total_years, results, increases, monthly_investment, rates, current_age)
+		# Apply currency symbol only
+		for r in rates:
+			df[f"{r}% Return"] = df[f"{r}% Return"].apply(lambda x: f"{symbol}{x:,}")
+		df["Total Invested"] = df["Total Invested"].apply(lambda x: f"{symbol}{x:,}")
+		st.subheader("📊 Year-by-Year Breakdown with Age")
+		st.dataframe(df, use_container_width=True)
+		st.subheader("💰 Summary Table")
+		summary_rows = []
+		for r in rates:
             final_val = results[r][0][-1] if results[r][0] else 0
             invested_total = results[r][1]
             summary_rows.append({
@@ -176,6 +173,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
