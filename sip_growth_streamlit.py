@@ -166,9 +166,20 @@ def main():
 		st.success(f"✨ Values displayed in {currency} only; amounts are unchanged, only the symbol updates.")	
 	else:
 		st.info("👈 Enter your details and click **Calculate Growth** to see results.")
+		# At the very end of your main() function, after all other Streamlit components
+		st.markdown(
+			"""
+			<div style='text-align:center; margin-top:30px; font-size:14px;'>
+			Visit our website: <a href='https://www.example.com' target='_blank'>www.example.com</a>
+			</div>
+			""",
+			unsafe_allow_html=True
+		)
+
 
 if __name__ == "__main__":
 	main()
+
 
 
 
