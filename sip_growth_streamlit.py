@@ -134,14 +134,14 @@ def main():
 		st.subheader("💰 Summary Table")
 		summary_rows = []
 		for r in rates:
-            final_val = results[r][0][-1] if results[r][0] else 0
-            invested_total = results[r][1]
-            summary_rows.append({
-                "Rate (%)": f"{r}%",
-                "Final Value": f"{symbol}{int(final_val):,}",
-                "Total Invested": f"{symbol}{int(invested_total):,}"
-            })
-        st.table(pd.DataFrame(summary_rows))
+			final_val = results[r][0][-1] if results[r][0] else 0
+			invested_total = results[r][1]
+			summary_rows.append({
+				"Rate (%)": f"{r}%",
+				"Final Value": f"{symbol}{int(final_val):,}",
+				"Total Invested": f"{symbol}{int(invested_total):,}"
+			})
+		st.table(pd.DataFrame(summary_rows))
 
         # ----------------------------
         # Growth chart
@@ -173,6 +173,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
