@@ -95,9 +95,9 @@ def main():
 	st.title("💷 Investment Growth Simulator")
 	# Sidebar inputs
 	st.sidebar.header("Enter Your Investment Details 🎯")
-    current_age = st.sidebar.number_input("Current Age", min_value=1, max_value=120, value=25)
-    monthly_investment = st.sidebar.number_input("Initial Monthly Investment", min_value=0.0, value=500.0, step=50.0)
-    end_age = st.sidebar.number_input("Invest Until Age", min_value=current_age + 1, max_value=120, value=60)
+	current_age = st.sidebar.number_input("Current Age", min_value=1, max_value=120, value=25)
+	monthly_investment = st.sidebar.number_input("Initial Monthly Investment", min_value=0.0, value=500.0, step=50.0)
+	end_age = st.sidebar.number_input("Invest Until Age", min_value=current_age + 1, max_value=120, value=60)
     compounding_end_age = st.sidebar.number_input("Compound Until Age (optional)", min_value=current_age + 1, max_value=120, value=end_age)
 
     st.sidebar.markdown("---")
@@ -177,5 +177,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
