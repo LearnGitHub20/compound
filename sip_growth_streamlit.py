@@ -106,7 +106,7 @@ def main():
 	num_increases = st.sidebar.number_input("Number of Increases", 0, 10, 0)
 
     for i in range(num_increases):
-        after_years = st.sidebar.number_input(f"Increase {i+1}: After how many years?", 0, end_age - current_age - 1, 5, key=f"iy_{i}")
+		after_years = st.sidebar.number_input(f"Increase {i+1}: After how many years?", 0, end_age - current_age - 1, 5, key=f"iy_{i}")
         new_amt = st.sidebar.number_input(f"Increase {i+1}: New Monthly Amount", 0.0, 1_000_000.0, 700.0, step=50.0, key=f"ia_{i}")
         increases.append((after_years, new_amt))
 
@@ -177,6 +177,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
