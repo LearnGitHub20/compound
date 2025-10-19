@@ -77,7 +77,7 @@ def build_yearly_df(total_years, results, increases, monthly_investment, rates, 
 # ----------------------------
 def main():
 	# At the very top of main(), after st.set_page_config()
-	st.image("logo.png", width=150)  # optional logo
+	st.image("RFin.png", width=150)  # optional logo
 
 # Add the quote
 	st.markdown(
@@ -91,9 +91,8 @@ def main():
 
 # App title
 	st.title("💷 Investment Growth Simulator")
-
-    st.set_page_config(page_title="💷 Investment Growth Simulator", layout="wide")
-    st.title("💷 Investment Growth Simulator")
+	st.set_page_config(page_title="💷 Investment Growth Simulator", layout="wide")
+	st.title("💷 Investment Growth Simulator")
 
     # Sidebar inputs
     st.sidebar.header("Enter Your Investment Details 🎯")
@@ -179,3 +178,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
