@@ -82,7 +82,7 @@ def main():
 # Add the quote
 	st.markdown(
     """
-    <div style='text-align:center; font-size:18px; color:#0d47a1; font-style:italic; margin-bottom:20px;'>
+    <div style='text-align:center; font-size:20px; color:#0d47a1; font-style:italic; margin-bottom:20px;'>
     "Compound interest is the eighth wonder of the world. He who understands it, earns it; he who doesn't, pays it."
     </div>
     """,
@@ -92,7 +92,6 @@ def main():
 # App title
 	st.title("💷 Investment Growth Simulator")
 	st.set_page_config(page_title="💷 Investment Growth Simulator", layout="wide")
-	st.title("💷 Investment Growth Simulator")
 	# Sidebar inputs
 	st.sidebar.header("Enter Your Investment Details 🎯")
 	current_age = st.sidebar.number_input("Current Age", min_value=1, max_value=120, value=25)
@@ -170,6 +169,7 @@ def main():
 
 if __name__ == "__main__":
 	main()
+
 
 
 
