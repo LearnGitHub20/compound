@@ -146,33 +146,31 @@ def main():
         # ----------------------------
         # Growth chart
         # ----------------------------
-        st.subheader("📈 Growth Chart")
-        fig, ax = plt.subplots(figsize=(10, 6))
-        colors = ['#1976d2', '#43a047', '#fbc02d', '#e53935']
-
-        for i, r in enumerate(rates):
-            y = [val for val in results[r][0]]
-            ax.plot(df["Year"], y, label=f"{r}% return", linewidth=2.5, color=colors[i])
-            ax.text(df["Year"].iloc[-1], y[-1], f"{symbol}{int(y[-1]):,}", fontsize=9, color=colors[i], verticalalignment='bottom')
+		st.subheader("📈 Growth Chart")
+		fig, ax = plt.subplots(figsize=(10, 6))
+		colors = ['#1976d2', '#43a047', '#fbc02d', '#e53935']
+		for i, r in enumerate(rates):
+			y = [val for val in results[r][0]]
+			ax.plot(df["Year"], y, label=f"{r}% return", linewidth=2.5, color=colors[i])
+			ax.text(df["Year"].iloc[-1], y[-1], f"{symbol}{int(y[-1]):,}", fontsize=9, color=colors[i], verticalalignment='bottom')
 
         # Total invested line
-        total_invested_line = [x for x in [results[rates[0]][1] / rates[0] * rates[0] for _ in range(total_years)]]
-        total_invested_line = [x for x in df["Total Invested"].apply(lambda v: int(v.replace(symbol, "").replace(",", "")))]
-        ax.plot(df["Year"], total_invested_line, linestyle='--', color='black', linewidth=2, label=f"Total Invested ({symbol})")
-
-        ax.set_xlabel("Year", fontsize=12)
-        ax.set_ylabel(f"Portfolio Value ({symbol})", fontsize=12)
-        ax.set_title(f"Investment Growth Over Time ({symbol})", fontsize=14, fontweight='bold', color="#0d47a1")
-        ax.grid(True, linestyle="--", alpha=0.6)
-        ax.legend()
-        st.pyplot(fig)
-
-        st.success(f"✨ Values displayed in {currency} only; amounts are unchanged, only the symbol updates.")
-    else:
-        st.info("👈 Enter your details and click **Calculate Growth** to see results.")
+		total_invested_line = [x for x in [results[rates[0]][1] / rates[0] * rates[0] for _ in range(total_years)]]
+		total_invested_line = [x for x in df["Total Invested"].apply(lambda v: int(v.replace(symbol, "").replace(",", "")))]
+		ax.plot(df["Year"], total_invested_line, linestyle='--', color='black', linewidth=2, label=f"Total Invested ({symbol})")
+		ax.set_xlabel("Year", fontsize=12)
+		ax.set_ylabel(f"Portfolio Value ({symbol})", fontsize=12)
+		ax.set_title(f"Investment Growth Over Time ({symbol})", fontsize=14, fontweight='bold', color="#0d47a1")
+		ax.grid(True, linestyle="--", alpha=0.6)
+		ax.legend()
+		st.pyplot(fig)
+		st.success(f"✨ Values displayed in {currency} only; amounts are unchanged, only the symbol updates.")	
+	else:
+		st.info("👈 Enter your details and click **Calculate Growth** to see results.")
 
 if __name__ == "__main__":
-    main()
+	main()
+
 
 
 
